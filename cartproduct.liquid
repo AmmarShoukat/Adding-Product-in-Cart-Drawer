@@ -1,3 +1,181 @@
+/*Note: set css according to your need */
+<style>
+.section-main-product.aboct-main-pdp .product .product__media-wrapper media-gallery {
+    margin-left: 0;
+
+}
+.section-main-product.aboct-main-pdp .product-media-container, .section-main-product.aboct-main-pdp .product-media-container .media {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.section-main-product.aboct-main-pdp  .product__tax.caption.rte{
+  display:none;
+}
+.product-set-wrapper {
+    margin-top: 30px !important;
+}
+.product-set-content {
+    width: 100%;
+    max-width: 200px;
+    padding-right: 12px;
+}
+.product-set-price .jdgm-prev-badge {
+    text-align: right;
+}
+.product-set-wrapper-inner {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 12px;
+    border: 2px dotted #000;
+        align-items: center;
+}
+.product-set-img {
+    width: 100%;
+    max-width: 110px;
+    padding-right: 12px;
+}
+a.set-product-url {
+    display: block;
+    line-height: 0;
+}
+.product-set-img img {
+    width: 100%;
+    max-width: 110px;
+    height: 100%;
+    max-height: 110px;
+    object-fit: cover;
+}
+.nws-buy-btn-wrapper product-form.product-form {
+    width: fit-content;
+}
+span.set-product-title {
+    font-size: 18px;
+    font-weight: 600;
+}
+.product-set-content p {
+    margin: 0;
+    margin-top: 10px;
+    font-size: 14px;
+}
+.nws-shipping-content ul {
+    padding: 0;
+    margin-top: 20px;
+}
+.nws-shipping-content ul li {
+    list-style: none;
+    position: relative;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #000;
+}
+.nws-shipping-content ul li:before {
+    content: '✓';
+    color: #000;
+    font-weight: 700;
+    padding-right: 5px;
+}
+.desktop-p-none{
+  display:none;
+}
+.nws-price-review {
+    display: flex;
+    justify-content: space-between;
+}
+.product-set-price p.regular-price {
+    text-align: right;
+    margin-top: 5px;
+}
+.product-set-price .jdgm-star.jdgm--on:before {
+    font-size: 14px;
+}
+.product-set-price span.jdgm-prev-badge__text {
+    font-size: 14px;
+}
+.product-set-wrapper product-form.product-form .product-form__submit {
+    font-size: 13px;
+    padding: 10px 20px;
+}
+.aboct-main-pdp .grid__item.product__media-wrapper {
+    padding-top: 6rem;
+}
+.aboct-main-pdp .nws-pdp-ui, .aboct-main-pdp .review-price-wrapper {
+    display: block;
+}
+.nws-benifits-wrapper {
+    margin-top: 30px !important;
+}
+.reviews-price-container {
+    display: flex;
+    justify-content: space-between;
+}
+.aboct-main-pdp .product__title {
+    width: 100%;
+    margin-top: 12px;
+}
+.custom-desc-pdp ul {
+    padding-left: 0;
+    list-style-position: inside;
+}
+.custom-desc-pdp ul li {
+    list-style: none;
+    position: relative;
+    line-height: normal;
+    margin-top: 15px;
+}
+.custom-desc-pdp ul li:first-child {
+    margin: 0;
+}
+.custom-desc-pdp ul li:before {
+    content: '';
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" class="icon icon-cart-empty" fill="currentColor" viewBox="0 0 197.2 263.59" style="enable-background:new 0 0 197.2 263.59;" xml:space="preserve" width="197.2" height="263.59"><path d="M142.64,0c-34.18,0-71.98,30.89-71.98,86.11c0,3.28,0,6.9,0.33,10.18c-7.89-4.93-16.43-7.23-24.98-7.23 C22.02,89.07,0,107.48,0,133.77c0,37.14,43.71,50.61,43.71,81.18c0,16.76-13.14,31.88-13.14,42.07c0,4.28,1.64,6.57,5.91,6.57 c27.28,0,160.72-91.37,160.72-195.88C197.2,21.37,171.23,0,142.64,0z"></path></svg>');
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+    background-size: contain;
+    display: inline-block;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+}
+.aboct-main-pdp .nws-pdp-ui{
+  margin-bottom:0;
+}
+.custom-desc-pdp {
+    margin: 0 !important;
+}
+.set-pdp-review--price {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    margin-bottom: 7px;
+}
+.nws-buy-btn-wrapper product-form.product-form {
+    margin: 0;
+    margin-top: 10px;
+}
+.aboct-main-pdp span.nws-sold-badge {
+    position: relative;
+    right: -8px;
+    top: 9px;
+    font-size: 16px;
+}
+.aboct-main-pdp .product-media-container.media-type-video{
+      --ratio: auto !important;
+}
+.aboct-main-pdp .product-media-container.media-type-video video {
+    object-fit: cover;
+}
+.desktop-title-none {
+    display: none;
+}
+.aboct-main-pdp.section-main-product .product .product__title h1{
+  font-weight:700;
+}
+</style>
+
+<!------------------------------HTML and Liquid --------------->
+
         {% if cart != empty %}
           {% assign product_rec_1 = settings.selected_product_id %}
           {% if product_rec_1 %}
