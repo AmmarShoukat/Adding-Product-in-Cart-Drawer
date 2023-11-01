@@ -1,0 +1,92 @@
+{% if cart != empty %}
+  {% assign product_rec_1 = settings.selected_product_id %}
+  {% if product_rec_1 %}
+    {% assign product_in_cart = false %}
+    {% for item in cart.items %}
+      {% if item.product.id == product_rec_1.id %}
+        {% assign product_in_cart = true %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+
+    {% if product_in_cart == false %}
+      <div class="product-set-wrapper">
+        <div class="product-set-wrapper-inner">
+          <div class="product-set-img">
+            <a class="set-product-url" href="{{ product_rec_1.url }}">
+              <img src="{{ product_rec_1 | img_url: 'master' }}" alt="{{ product_rec_1.title }}">
+            </a>
+          </div>
+          <div class="product-set-content">
+            <a class="set-product-title-anchor mobile-none" href="{{ product_rec_1.url }}">
+              <span class="set-product-title">{{ product_rec_1.title }}</span>
+            </a>
+            <p class="desc-pd mobile-none">
+              {{ product_rec_1.description | strip_html | truncatewords: 10, '' }}
+            </p>
+            <div class="desktop-p-none">
+              <div class="set-pdp-review--price">
+                <div
+                  style="{{ jm_style }}"
+                  class="jdgm-widget jdgm-preview-badge"
+                  data-id="{{ product_rec_1.id }}"
+                  data-auto-install="false"
+                >
+                  {{ product_rec_1.metafields.judgeme.badge }}
+                </div>
+                {% if product_rec_1.compare_at_price > product_rec_1.price %}
+                  <p class="discounted-price">{{ product_rec_1.price | money }}</p>
+                  <p class="original-price">{{ product_rec_1.compare_at_price | money }}</p>
+                {% else %}
+                  <p class "regular-price">{{ product_rec_1.price | money }}</p>
+                {% endif %}
+              </div>
+              <a href="{{ product_rec_1.url }}">
+                <span class="set-product-title">{{ product_rec_1.title }}</span>
+              </a>
+              <p class="desc-pd">{{ product_rec_1.description | strip_html | truncatewords: 10, '' }}</p>
+              <div class="nws-buy-btn-wrapper">
+                {%- render 'nws-buy-buttons',
+                block: block,
+                product: product_rec_1,  # Pass the product_rec_1 (setproduct) instead of the original product
+                product_form_id: 'product-form-' | append: section.id,  # Modify this as needed
+                section_id: section.id,
+                show_pickup_availability: true
+                -%}
+              </div>
+            </div>
+          </div>
+          <div class="product-set-price-btn">
+            <div class="product-set-price">
+              <!-- Start of Judge.me code -->
+              <div
+                style="{{ jm_style }}"
+                class="jdgm-widget jdgm-preview-badge"
+                data-id="{{ product_rec_1.id }}"
+                data-auto-install="false"
+              >
+                {{ product_rec_1.metafields.judgeme.badge }}
+              </div>
+              <!-- End of Judge.me code -->
+              {% if product_rec_1.compare_at_price > product_rec_1.price %}
+                <p class="discounted-price">{{ product_rec_1.price | money }}</p>
+                <p class="original-price">{{ product_rec_1.compare_at_price | money }}</p>
+              {% else %}
+                <p class="regular-price">{{ product_rec_1.price | money }}</p>
+              {% endif %}
+            </div>
+            <div class="nws-buy-btn-wrapper">
+              {%- render 'nws-buy-buttons',
+              block: block,
+              product: product_rec_1,  # Pass the product_rec_1 (setproduct) instead of the original product
+              product_form_id: 'product-form-' | append: section.id,  # Modify this as needed
+              section_id: section.id,
+              show_pickup_availability: true
+              -%}
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+  {% endif %}
+{% endif %}
